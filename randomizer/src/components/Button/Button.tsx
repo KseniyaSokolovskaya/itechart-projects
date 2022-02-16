@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import useUserListContext from '../../contexts/UsersList';
 import './index.scss';
 
 interface userProps {
@@ -11,7 +11,8 @@ interface userProps {
 }
 
 const Button: React.FC = () => {
-  const [list, setList] = useState<{ user: userProps; country: string }[]>([]);
+  const userList = useUserListContext();
+  const [, setList] = useState<{ user: userProps; country: string }[]>([]);
 
   function getRandomCountry(arr: string[]) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -32,6 +33,7 @@ const Button: React.FC = () => {
 
     const randomUser = getRandomUser(users);
     const randomCountry = getRandomCountry(countries);
+    userList.changeUserList({ ...randomUser, country: randomCountry });
 
     setList((prev) => [...prev, { user: randomUser, country: randomCountry }]);
   }
