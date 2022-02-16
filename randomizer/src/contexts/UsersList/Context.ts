@@ -11,11 +11,15 @@ export interface IUser {
 
 export interface IUserListContext {
   userList: IUser[];
+  lastStr: string;
+  listStr: string[];
   changeUserList: (user: IUser) => void;
 }
 
 const defaultUserList = {
   userList: [],
+  lastStr: '',
+  listStr: [],
   changeUserList: () => {
     //
   },
