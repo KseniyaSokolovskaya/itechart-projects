@@ -39,7 +39,7 @@ const Button: React.FC = () => {
   }
 
   return (
-    <button className="btn" onClick={handleClick}>
+    <button className="btn" onClick={handleClick} disabled={userList.counter === 10}>
       Generate
     </button>
   );

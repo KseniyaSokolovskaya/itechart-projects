@@ -6,7 +6,7 @@ const Provider: React.FC = ({ children }) => {
   const [userList, setUserList] = useState<IUser[]>([]);
   const [lastStr, setLastStr] = useState('');
   const [listStr, setLisStr] = useState<string[]>([]);
-
+  const [counter, setCounter] = useState<number>(0);
 
   function isDuplicateName(user: IUser) {
     return !!userList.find((item: IUser) => item.lastName === user.lastName && item.firstName === user.firstName);
@@ -20,10 +20,11 @@ const Provider: React.FC = ({ children }) => {
 
       setLastStr(str);
       setLisStr((prev) => [...prev, str]);
+      setCounter((prev) => prev + 1);
     }
   }
 
-  const contextValue: IUserListContext = { userList, lastStr, listStr, changeUserList };
+  const contextValue: IUserListContext = { userList, lastStr, listStr, counter, changeUserList };
   return <Context.Provider value={contextValue}>{children} </Context.Provider>;
 };
 

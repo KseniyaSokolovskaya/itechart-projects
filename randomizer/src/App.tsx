@@ -3,6 +3,7 @@ import * as UsersList from './contexts/UsersList';
 import Button from './components/Button';
 import Input from './components/Input';
 import Textarea from './components/Textarea';
+import Counter from './components/Counter';
 
 const App: React.FC = () => (
   <UsersList.Provider>
@@ -14,6 +15,7 @@ const App: React.FC = () => (
       <div className="app__main">
         <Textarea list={[]} />
       </div>
+      <Counter />
     </div>
   </UsersList.Provider>
 );

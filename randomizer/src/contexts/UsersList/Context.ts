@@ -13,6 +13,7 @@ export interface IUserListContext {
   userList: IUser[];
   lastStr: string;
   listStr: string[];
+  counter: number;
   changeUserList: (user: IUser) => void;
 }
 
@@ -20,6 +21,7 @@ const defaultUserList = {
   userList: [],
   lastStr: '',
   listStr: [],
+  counter: 0,
   changeUserList: () => {
     //
   },
