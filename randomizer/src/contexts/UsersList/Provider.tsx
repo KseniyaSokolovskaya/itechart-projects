@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Context from './Context';
 import type { IUser, IUserListContext } from './Context';
 
