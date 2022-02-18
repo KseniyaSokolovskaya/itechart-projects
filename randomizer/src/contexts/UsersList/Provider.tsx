@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Context from './Context';
-import type { IUser, IUserListContext } from './Context';
+import { IUserListContext, IUser } from '../../interfaces';
 
 const Provider: React.FC = ({ children }) => {
   const [userList, setUserList] = useState<IUser[]>([]);
   const [lastStr, setLastStr] = useState('');
-  const [listStr, setLisStr] = useState<string[]>([]);
+  const [listStr, setListStr] = useState<string[]>([]);
   const [counter, setCounter] = useState<number>(0);
 
   function isDuplicateName(user: IUser) {
@@ -19,7 +19,7 @@ const Provider: React.FC = ({ children }) => {
       const str = `${user.firstName} ${user.lastName}, ${user.occupation} from ${user.country}`;
 
       setLastStr(str);
-      setLisStr((prev) => [...prev, str]);
+      setListStr((prev) => [...prev, str]);
       setCounter((prev) => prev + 1);
     }
   }

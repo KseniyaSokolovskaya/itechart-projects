@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Context from './Context';
 import Provider from './Provider';
-import type { IUserListContext } from './Context';
+import { IUserListContext } from '../../interfaces';
 
 const useUserListContext = (): IUserListContext => useContext(Context);
 

@@ -3,9 +3,9 @@ import useUserListContext from '../../contexts/UsersList';
 import './index.scss';
 
 const Counter: React.FC = () => {
-  const count = useUserListContext().counter;
+  const { counter } = useUserListContext();
 
-  return <div className="counter">Generated {count} from 10</div>;
+  return <div className="counter">Generated {counter} from 10</div>;
 };
 
 export default Counter;
