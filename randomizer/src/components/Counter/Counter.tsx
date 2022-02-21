@@ -1,5 +1,5 @@
 import React from 'react';
-import useUserListContext from '../../contexts/UsersList';
+import useUserListContext from '../../services/contexts/UsersList';
 import './index.scss';
 
 const Counter: React.FC = () => {

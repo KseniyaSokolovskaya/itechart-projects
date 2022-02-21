@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUserListContext } from '../../interfaces';
+import { IUserListContext } from '../../../interfaces';
 
 const defaultUserList = {
   userList: [],

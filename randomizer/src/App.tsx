@@ -1,5 +1,5 @@
 import React from 'react';
-import * as UsersList from './contexts/UsersList';
+import * as UsersList from './services/contexts/UsersList';
 import Button from './components/Button';
 import Input from './components/Input';
 import Textarea from './components/Textarea';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Context from './Context';
-import { IUserListContext, IUser } from '../../interfaces';
+import { IUserListContext, IUser } from '../../../interfaces';
 
 const Provider: React.FC = ({ children }) => {
   const [userList, setUserList] = useState<IUser[]>([]);

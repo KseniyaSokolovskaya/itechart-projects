@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useUserListContext from '../../contexts/UsersList';
+import useUserListContext from '../../services/contexts/UsersList';
 import { IUserProps } from '../../interfaces';
 import './index.scss';
 
@@ -20,8 +20,8 @@ const Button: React.FC = () => {
     setDisabledBtn(true);
 
     if (userList.counter < 10) {
-      const requestUsers = fetch('https://rnd-test-api.herokuapp.com/api/v1/persons?count=5');
-      const requestCountries = fetch('https://rnd-test-api.herokuapp.com/api/v1/countries?count=5');
+      const requestUsers = fetch('https://rnd-test-api.herokuapp.com/api/v1/persons?count=10');
+      const requestCountries = fetch('https://rnd-test-api.herokuapp.com/api/v1/countries?count=10');
 
       const [usersResult, countriesResult] = await Promise.all([requestUsers, requestCountries]);
 
