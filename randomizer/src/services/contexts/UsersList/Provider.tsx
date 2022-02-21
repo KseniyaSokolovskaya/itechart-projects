@@ -29,14 +29,15 @@ const Provider: React.FC = ({ children }) => {
   }
 
   function changeUserList(user: IUser) {
+    const str = `${user.firstName} ${user.lastName}, ${user.occupation} from ${user.country}`;
+
     if (!isDuplicateName(user)) {
       setUserList((prev) => [...prev, user]);
-
-      const str = `${user.firstName} ${user.lastName}, ${user.occupation} from ${user.country}`;
-
       setLastStr(str);
       setListStr((prev) => [...prev, str]);
       setCounter((prev) => prev + 1);
+    } else {
+      setLastStr(str);
     }
   }
 
