@@ -4,7 +4,7 @@ import './index.scss';
 
 const Textarea: React.FC<{ list: string[] }> = () => {
   const listStr = useUserListContext().listStr.join('\n');
-  return <textarea className="textarea" defaultValue={listStr} disabled></textarea>;
+  return <textarea className="textarea" value={listStr} disabled></textarea>;
 };
 
 export default Textarea;
