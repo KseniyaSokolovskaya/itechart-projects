@@ -6,6 +6,11 @@ export interface IUserProps {
   occupation: string;
 }
 
+export interface IResponseData {
+  users: IUserProps[];
+  countries: string[];
+}
+
 export interface IUser extends IUserProps {
   lastName: string;
   firstName: string;
@@ -20,5 +25,8 @@ export interface IUserListContext {
   lastStr: string;
   listStr: string[];
   counter: number;
+  responseData: IResponseData;
   changeUserList: (user: IUser) => void;
+  sendRequest: () => void;
+  createFullUser: () => void;
 }

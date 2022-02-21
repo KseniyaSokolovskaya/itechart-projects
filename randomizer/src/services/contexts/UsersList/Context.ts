@@ -6,7 +6,14 @@ const defaultUserList = {
   lastStr: '',
   listStr: [],
   counter: 0,
+  responseData: { users: [], countries: [] },
   changeUserList: () => {
+    //
+  },
+  sendRequest: () => {
+    //
+  },
+  createFullUser: () => {
     //
   },
 };

@@ -1,44 +1,25 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import useUserListContext from '../../services/contexts/UsersList';
-import { IUserProps } from '../../interfaces';
 import './index.scss';
 
 const Button: React.FC = () => {
   const userList = useUserListContext();
-
-  const [isDisabledBtn, setDisabledBtn] = useState(false);
-
-  function getRandomCountry(arr: string[]) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  function getRandomUser(arr: IUserProps[]) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+  const countClick = useRef(0);
 
   async function handleClick() {
-    setDisabledBtn(true);
+    countClick.current++;
 
-    if (userList.counter < 10) {
-      const requestUsers = fetch('https://rnd-test-api.herokuapp.com/api/v1/persons?count=10');
-      const requestCountries = fetch('https://rnd-test-api.herokuapp.com/api/v1/countries?count=10');
+    if (countClick.current === 1) {
+      userList.sendRequest();
+    }
 
-      const [usersResult, countriesResult] = await Promise.all([requestUsers, requestCountries]);
-
-      const countries = await countriesResult.json();
-      const users = await usersResult.json();
-
-      const randomUser = getRandomUser(users);
-      const randomCountry = getRandomCountry(countries);
-
-      userList.changeUserList({ ...randomUser, country: randomCountry });
-
-      setDisabledBtn(false);
+    if (countClick.current > 1) {
+      userList.createFullUser();
     }
   }
 
   return (
-    <button className="btn" onClick={handleClick} disabled={isDisabledBtn}>
+    <button className="btn" onClick={handleClick}>
       Generate
     </button>
   );
