@@ -1,0 +1,35 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.app {
+  height: 100%;
+}
+
+body {
+  font: 400 14px $font-primary;
+  color: $txt-secondary-color;
+  background-color: $bg-main-color;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    margin: 10px 0;
+    border: 1px solid green;
+  }
+
+  &__main {
+    textarea {
+      width: 100%;
+    }
+  }
+}

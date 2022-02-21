@@ -1,0 +1,6 @@
+.textarea {
+  height: 500px;
+  &:disabled {
+    color: #000;
+  }
+}
